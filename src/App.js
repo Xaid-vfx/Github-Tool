@@ -63,7 +63,7 @@ export default function () {
 
 
   const octokit = new Octokit({
-    auth: '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'
+    auth: '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'
   });
 
 
