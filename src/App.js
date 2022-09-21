@@ -97,7 +97,7 @@ export default function () {
       }
 
       setsize(sum)
-      console.log(sum);
+
 
 
       const details = await octokit.request('GET /users/{username}', {
