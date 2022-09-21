@@ -43,7 +43,7 @@ code {
 
 .loading {
   display: flex;
-  width: 150vh;
+  width: 120vh;
   height: 80vh;
   justify-content: center;
   align-items: center;
@@ -90,4 +90,11 @@ code {
  
  }
 
- 
+ .link{
+  text-decoration: none;
+  color: black;
+ }
+
+ .link:hover{
+   opacity: .6;
+ }
