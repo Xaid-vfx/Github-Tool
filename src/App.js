@@ -19,11 +19,15 @@ export default function () {
   const [loading1, setloading1] = useState(false)
   const [name, setname] = useState()
   const [url, seturl] = useState()
+  const [loc, setloc] = useState()
   const [bio, setbio] = useState()
   const [link, setlink] = useState()
+  const [link2, setlink2] = useState()
   const [size, setsize] = useState()
 
   const [page, setpage] = useState(1)
+  var sum=0;
+  let i=1;
 
 
 
@@ -74,12 +78,26 @@ export default function () {
 
       setloading(true);
 
-      const req1 = await octokit.request('GET /users/{username}/repos?page=1&per_page=1000', {
+      let req1 = await octokit.request('GET /users/{username}/repos?page=1&per_page=100', {
         username: username
       })
+      let r1=req1.data.length
+      
+      sum=sum+r1
+      
+      
+      while(req1.data.length>=100){
+        i++;
+         req1 = await octokit.request('GET /users/{username}/repos?page=2&per_page=100', {
+          username: username
+        })
+        sum=sum+req1.data.length
+        r1=req1.data.length
+        console.log(r1);
+      }
 
-      setsize(req1.data.length)
-      console.log(req1.data.size);
+      setsize(sum)
+      console.log(sum);
 
 
       const details = await octokit.request('GET /users/{username}', {
@@ -96,9 +114,11 @@ export default function () {
       get().then(function (res) {
 
         // setrep(res[0]);
-        console.log(res[0]);
-        setname(res[0].login);
+        // console.log(res[0]);
+        setname(res[0].name);
         seturl(res[0].avatar_url);
+        setloc(res[0].location);
+        setlink2(res[0].twitter_username);
         setbio(res[0].bio);
         setlink(res[0].html_url)
       })
@@ -133,7 +153,7 @@ export default function () {
   function setpagenum(p) {
     setpage(p)
 
-    console.log(p);
+    // console.log(p);
   }
 
 
@@ -158,10 +178,10 @@ export default function () {
 
       <div className='loader'>
         {loading ? (<div className='loading1'>
-          <GridLoader color='#4169E1' loading={loading1} size={20} /></div>)
+          <GridLoader color='#4169E1' loading={loading} size={20} /></div>)
           :
           (<div>
-            <div className='alignuser'><UserDetails name={name} url={url} bio={bio} link={link} /></div>
+            <div className='alignuser'><UserDetails name={name} url={url} bio={bio} link={link} loc={loc} twitter={link2}/></div>
 
 
             <div className='alignrepo'>
