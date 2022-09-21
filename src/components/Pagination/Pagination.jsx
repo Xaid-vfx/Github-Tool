@@ -27,7 +27,7 @@ export default function Pagination(props) {
         if (totalpages > 8) {
             //console.log(arr.slice(0,8));
             rap = arr.slice(0, 8)
-            console.log(rap);
+
             setarr1(rap)
         }
 
