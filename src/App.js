@@ -93,7 +93,7 @@ export default function () {
         })
         sum=sum+req1.data.length
         r1=req1.data.length
-        console.log(r1);
+
       }
 
       setsize(sum)
