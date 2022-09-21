@@ -63,7 +63,7 @@ export default function () {
 
 
   const octokit = new Octokit({
-    auth: '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'
+    auth: process.env.API_KEY
   });
 
 
