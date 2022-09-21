@@ -1,0 +1,32 @@
+.details{
+    display: flex;
+    align-items: center;
+    gap:5%;
+    margin: 40px;
+    transform: translateX(100px);
+    transition: 1.5s all;
+    opacity: 0;
+}
+.details.show{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#profileimg{
+    max-width: 200px;
+    border-radius: 100px;
+    border: 1px solid;
+}
+
+@media only screen and (max-width:786px){
+    .details h2{
+        font-size: larger;
+    }
+    .details p{
+        font-size: small;
+    }
+    #profileimg{
+        max-width: 100px;
+    }
+}
+

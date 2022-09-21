@@ -1,0 +1,88 @@
+.pages{
+    display: flex;
+    align-items: center;
+    
+    
+}
+.page{
+    
+    padding: 10px 15px;
+    border: 1px solid #4169E1;
+    background-color: white;
+    color: #4169E1;
+    width: 50px;
+}
+.page:hover{
+    background-color: #4169E1;
+    color: white;
+    cursor: pointer;
+}
+
+
+.rage{
+    
+    border: 1px solid #4169E1;
+    padding: 10px 15px;
+    width: 50px;
+    background-color: #4169E1;
+    color: white;
+}
+
+.togglebtn{
+    width: 20px;
+    border: 1px solid #4169E1;
+    padding: 7.2px 15px;
+    color: #4169E1;
+    font-size: large;
+    font-weight: 600;
+}
+.togglebtn:hover{
+    color: #A7C7E7;
+    cursor: pointer;
+}
+
+
+.dots{
+    display: inline;
+}
+
+@media only screen and (max-width:768px) {
+    .togglebtn{
+        padding: 5px 5px;
+        font-size: smaller;
+        width: 15px;
+    }
+    .page{
+
+        border: 1px solid;
+        padding: 5px 5px;
+        width: 25px;
+        border: 1px solid #4169E1;
+        background-color: white;
+    }
+
+    .rage{
+        width: 25px;
+        padding: 5px 5px;
+        background-color: #4169E1;
+        color: white;
+    }
+    
+}
+.seebtns{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.seebtn{
+    background-color: white;
+    color: #4169E1;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 5px;
+}
+.seebtn:hover{
+    background-color: #4169E1;
+    color: white;
+    border: 1px solid;
+}

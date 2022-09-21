@@ -1,0 +1,75 @@
+.repo {
+    border: 1px solid;
+    padding-bottom: 15px;
+    padding-inline: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    word-wrap: break-word;
+    margin: 15px;
+    
+}
+
+.repo:hover {
+    transform: scale(1.05);
+}
+
+.Repos{
+    width: 90%;
+    display: grid;
+    max-height: 150vh;
+    grid-template-columns: repeat(2, 50vh);
+    justify-content: space-evenly;
+    transform: translateX(-100px);
+    transition: 2s all;
+    opacity: 0;
+}
+.Repos.show{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.lang {
+    background-color: #4169E1;
+    width: fit-content;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+}
+
+.repo h1 {
+    color: #4169E1;
+}
+
+
+@media only screen and (max-width:1100px) {
+    .Repos {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        min-height: 0vh;
+        justify-content: space-evenly;
+        margin-inline: 10px;
+    }
+
+    .repo {
+        padding: 5px;
+        margin: 5px;
+        width: 140px;
+        min-height: 90px;
+    }
+
+    .repo h2 {
+        font-size: small;
+
+    }
+
+    .repo p {
+        font-size: x-small;
+    }
+
+    .lang {
+        font-size: x-small;
+    }
+}
